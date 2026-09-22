@@ -1,33 +1,28 @@
-# Gran Forno — Site
+GRAN FORNO — SITE COMPLETO
 
-## Arquivos
-- index.html → textos, produtos, links e estrutura.
-- style.css → aparência e responsividade.
-- script.js → menu mobile, ano automático e botões de pedido.
-- images/logo.png → logo enviada pelo cliente.
+PASTAS:
+- index.html = página principal.
+- style.css = visual.
+- script.js = galeria, modal, WhatsApp e menu.
+- images/logo.png = logo.
+- images/hero.jpg = foto grande do início.
+- images/produto-01.jpg até produto-04.jpg = fotos do cardápio.
+- images/galeria-01.jpg até galeria-50.jpg = 50 fotos da galeria.
+- videos/video-01.mp4 e video-02.mp4 = vídeos do estabelecimento.
 
-## Onde editar rapidamente
-- Produtos: procure `PRODUTO:` no index.html.
-- Preços: procure `PREÇO:`.
-- Fotos: procure `ÁREA DE FOTO` e `FOTO 01`, `FOTO 02` etc.
-- Endereço: procure `ENDEREÇO:`.
-- Horário: procure `HORÁRIO:`.
-- iFood: procure `IFOOD:` e substitua o link pelo link real do Gran Forno.
-- WhatsApp: o número 11 92067-6006 já está configurado.
+GALERIA:
+Cada foto abre uma janela com nome, descrição, ingredientes e botão de pedido.
+Os ingredientes estão como texto de exemplo no script.js. Substitua pelos ingredientes reais.
 
-## Como colocar uma foto de produto
-Você pode substituir, por exemplo:
+VÍDEOS:
+Coloque os arquivos MP4 nas pastas indicadas.
 
-<div class="photo-placeholder">
-  <span>COLOQUE A FOTO AQUI</span>
-</div>
-
-por:
-
-<img class="product-photo" src="images/pizza.jpg" alt="Pizza da Casa">
-
-Depois, coloque `pizza.jpg` dentro da pasta `images`.
-
-## Como testar
-Abra o arquivo `index.html` no navegador.
-Para publicar, envie a pasta inteira para a hospedagem do domínio do restaurante.
+ANTES DE PUBLICAR:
+1. Trocar preços.
+2. Trocar produtos e ingredientes pelos reais.
+3. Colocar endereço.
+4. Colocar horários.
+5. Colocar link real do iFood.
+6. Colocar Instagram, se houver.
+7. Conferir informações de alergênicos.
+8. Testar todos os botões no celular.

@@ -1,847 +1,929 @@
 /* ============================================================
-   GRAN FORNO — CSS RESTAURANTE CHIC
-   Visual: elegante, acolhedor, premium e responsivo.
-   Este arquivo funciona com as classes do seu HTML atual.
+   GRAN FORNO — CSS COMPLETO
+   Visual elegante + galeria de 50 fotos + vídeos + modal.
    ============================================================ */
 
-/* Define as variáveis principais do projeto. */
-:root { /* Abre as variáveis globais. */
-  --dark: #17120e; /* Define o marrom quase preto principal. */
-  --dark-soft: #241912; /* Define um marrom escuro secundário. */
-  --cream: #f7f1e7; /* Define o creme usado nos fundos claros. */
-  --cream-2: #efe5d5; /* Define um creme um pouco mais escuro. */
-  --gold: #c9a24d; /* Define o dourado elegante da marca. */
-  --gold-light: #e2bf70; /* Define um dourado mais claro para detalhes. */
-  --white: #fffaf2; /* Define o branco quente dos textos. */
-  --text: #2b211a; /* Define a cor principal dos textos escuros. */
-  --muted: #75685d; /* Define a cor dos textos secundários. */
-  --green: #18a957; /* Define o verde do WhatsApp. */
-  --red: #e5282d; /* Define o vermelho usado no botão do iFood. */
-  --shadow: 0 18px 50px rgba(37, 24, 14, 0.14); /* Define uma sombra elegante. */
-  --radius: 20px; /* Define o arredondamento padrão dos cartões. */
-  --container: 1180px; /* Define a largura máxima do conteúdo. */
-} /* Fecha as variáveis globais. */
-
-/* Faz o navegador calcular larguras de forma previsível. */
-* { /* Seleciona todos os elementos. */
-  box-sizing: border-box; /* Faz padding e borda entrarem no cálculo da largura. */
-} /* Fecha o seletor universal. */
-
-/* Ativa rolagem suave nos links internos. */
-html { /* Seleciona o documento HTML. */
-  scroll-behavior: smooth; /* Faz a navegação interna deslizar suavemente. */
-} /* Fecha o HTML. */
-
-/* Define o estilo geral da página. */
-body { /* Seleciona o corpo da página. */
-  margin: 0; /* Remove a margem padrão do navegador. */
-  background: var(--cream); /* Usa o fundo creme elegante. */
-  color: var(--text); /* Define a cor padrão dos textos. */
-  font-family: "Montserrat", Arial, sans-serif; /* Usa uma fonte moderna para os textos. */
-  line-height: 1.65; /* Aumenta o conforto de leitura. */
-  overflow-x: hidden; /* Evita rolagem horizontal indesejada. */
-} /* Fecha o corpo. */
-
-/* Define o comportamento das imagens. */
-img { /* Seleciona todas as imagens. */
-  max-width: 100%; /* Impede que a imagem ultrapasse seu espaço. */
-  display: block; /* Remove espaços estranhos abaixo das imagens. */
-} /* Fecha as imagens. */
-
-/* Cria um container centralizado. */
-.container { /* Seleciona todos os containers. */
-  width: min(var(--container), calc(100% - 48px)); /* Limita a largura e cria margens laterais. */
-  margin: 0 auto; /* Centraliza o conteúdo. */
-} /* Fecha o container. */
-
-/* ============================================================
-   CABEÇALHO
-   ============================================================ */
-
-/* Cria um cabeçalho premium e discreto. */
-.header { /* Seleciona o cabeçalho. */
-  position: sticky; /* Mantém o cabeçalho visível durante a rolagem. */
-  top: 0; /* Cola o cabeçalho no topo. */
-  z-index: 1000; /* Mantém o cabeçalho acima dos demais elementos. */
-  background: rgba(20, 14, 10, 0.94); /* Cria um fundo escuro translúcido. */
-  border-bottom: 1px solid rgba(201, 162, 77, 0.28); /* Adiciona uma linha dourada discreta. */
-  backdrop-filter: blur(14px); /* Cria o efeito sofisticado de vidro. */
-} /* Fecha o cabeçalho. */
-
-/* Organiza os elementos do cabeçalho. */
-.header-content { /* Seleciona o conteúdo interno do cabeçalho. */
-  min-height: 92px; /* Define a altura elegante do cabeçalho. */
-  display: flex; /* Coloca os elementos lado a lado. */
-  align-items: center; /* Centraliza os elementos verticalmente. */
-  gap: 32px; /* Cria espaço entre logo e menu. */
-} /* Fecha o conteúdo do cabeçalho. */
-
-/* Define o link da logo. */
-.logo-link { /* Seleciona o link que envolve a logo. */
-  flex-shrink: 0; /* Impede que a logo seja esmagada. */
-  display: flex; /* Permite alinhar a imagem. */
-  align-items: center; /* Centraliza a imagem. */
-} /* Fecha o link da logo. */
-
-/* Cria uma apresentação mais sofisticada para a logo. */
-.logo { /* Seleciona a logo principal. */
-  width: 88px; /* Define a largura da logo. */
-  height: 88px; /* Define a altura da logo. */
-  object-fit: contain; /* Mantém a proporção original. */
-  border-radius: 50%; /* Deixa a logo circular. */
-  border: 2px solid var(--gold); /* Cria uma moldura dourada. */
-  background: var(--dark); /* Define um fundo escuro para transparências. */
-  padding: 2px; /* Cria um pequeno espaço interno. */
-  box-shadow: 0 8px 25px rgba(0,0,0,.32); /* Adiciona profundidade à logo. */
-} /* Fecha a logo. */
-
-/* Organiza os links da navegação. */
-.nav { /* Seleciona o menu. */
-  margin-left: auto; /* Empurra a navegação para a direita. */
-  display: flex; /* Coloca os links em linha. */
-  align-items: center; /* Alinha os links verticalmente. */
-  gap: 8px; /* Cria pequeno espaço entre os links. */
-} /* Fecha a navegação. */
-
-/* Estiliza cada link da navegação. */
-.nav a { /* Seleciona os links do menu. */
-  position: relative; /* Permite criar o detalhe dourado inferior. */
-  padding: 12px 15px; /* Cria uma área confortável para clicar. */
-  color: var(--white); /* Usa branco quente. */
-  text-decoration: none; /* Remove o sublinhado padrão. */
-  font-size: 14px; /* Define tamanho discreto e elegante. */
-  font-weight: 600; /* Dá presença aos links. */
-  transition: .25s ease; /* Suaviza as mudanças. */
-} /* Fecha os links. */
-
-/* Cria uma linha dourada animada nos links. */
-.nav a::after { /* Cria o detalhe inferior. */
-  content: ""; /* Cria o elemento visual. */
-  position: absolute; /* Posiciona o detalhe dentro do link. */
-  left: 15px; /* Define o início do detalhe. */
-  right: 15px; /* Define o final do detalhe. */
-  bottom: 5px; /* Posiciona o detalhe próximo ao final. */
-  height: 2px; /* Define a espessura. */
-  background: var(--gold); /* Usa dourado. */
-  transform: scaleX(0); /* Esconde inicialmente. */
-  transition: transform .25s ease; /* Anima a entrada. */
-} /* Fecha o detalhe. */
-
-/* Mostra o detalhe quando o mouse passa pelo link. */
-.nav a:hover::after { /* Seleciona links em hover. */
-  transform: scaleX(1); /* Expande a linha dourada. */
-} /* Fecha o hover. */
-
-/* Muda a cor do link no hover. */
-.nav a:hover { /* Seleciona links em hover. */
-  color: var(--gold-light); /* Usa dourado claro. */
-} /* Fecha o hover. */
-
-/* Destaca o botão do WhatsApp no menu. */
-.nav-whatsapp { /* Seleciona o link especial do WhatsApp. */
-  border: 1px solid var(--gold); /* Cria uma borda dourada. */
-  border-radius: 999px; /* Deixa o botão totalmente arredondado. */
-  margin-left: 8px; /* Cria separação dos demais links. */
-} /* Fecha o botão WhatsApp. */
-
-/* Remove o efeito inferior do botão WhatsApp. */
-.nav-whatsapp::after { /* Seleciona o detalhe do botão. */
-  display: none; /* Não mostra a linha inferior. */
-} /* Fecha o detalhe do WhatsApp. */
-
-/* Cria o botão de menu mobile. */
-.menu-button { /* Seleciona o botão do menu. */
-  display: none; /* Esconde no computador. */
-  margin-left: auto; /* Empurra o botão para a direita. */
-  border: 1px solid rgba(201,162,77,.5); /* Cria uma borda dourada. */
-  background: transparent; /* Mantém o fundo transparente. */
-  border-radius: 12px; /* Arredonda o botão. */
-  padding: 10px; /* Cria espaço interno. */
-} /* Fecha o botão mobile. */
-
-/* Estiliza as linhas do botão mobile. */
-.menu-button span { /* Seleciona as três linhas. */
-  display: block; /* Faz cada linha ocupar seu próprio espaço. */
-  width: 24px; /* Define a largura das linhas. */
-  height: 2px; /* Define a espessura das linhas. */
-  margin: 5px 0; /* Cria espaço vertical. */
-  background: var(--gold-light); /* Usa dourado claro. */
-} /* Fecha as linhas. */
-
-/* ============================================================
-   HERO — PRIMEIRA IMPRESSÃO DO RESTAURANTE
-   ============================================================ */
-
-/* Cria uma área inicial grande e sofisticada. */
-.hero { /* Seleciona o destaque principal. */
-  position: relative; /* Permite posicionar a camada sobre a imagem. */
-  min-height: 680px; /* Cria uma área visual ampla. */
-  display: flex; /* Permite centralizar o conteúdo. */
-  align-items: center; /* Centraliza verticalmente. */
-  background: linear-gradient(115deg, #160f0b 0%, #342117 48%, #5b351f 100%); /* Cria fundo elegante mesmo sem foto. */
-  overflow: hidden; /* Esconde elementos que ultrapassarem a área. */
-} /* Fecha o hero. */
-
-/* Permite usar uma foto de fundo quando ela existir. */
-.hero::before { /* Cria uma camada de imagem opcional. */
-  content: ""; /* Cria o elemento. */
-  position: absolute; /* Ocupa toda a área do hero. */
-  inset: 0; /* Expande para todos os lados. */
-  background: url("images/hero.jpg") center/cover no-repeat; /* Procura a foto principal em images/hero.jpg. */
-  opacity: .32; /* Mantém o texto legível sobre a imagem. */
-  filter: saturate(.85); /* Deixa a foto mais sofisticada. */
-} /* Fecha a camada da foto. */
-
-/* Cria o degradê que melhora a leitura do texto. */
-.hero-overlay { /* Seleciona a camada existente no HTML. */
-  position: absolute; /* Ocupa toda a área. */
-  inset: 0; /* Expande em todas as direções. */
-  background: linear-gradient(90deg, rgba(12,8,5,.95) 0%, rgba(12,8,5,.76) 48%, rgba(12,8,5,.25) 100%); /* Escurece principalmente o lado do texto. */
-  z-index: 1; /* Coloca a camada acima da foto. */
-} /* Fecha a sobreposição. */
-
-/* Organiza o conteúdo do hero. */
-.hero-content { /* Seleciona o conteúdo principal. */
-  position: relative; /* Permite trabalhar com z-index. */
-  z-index: 2; /* Coloca o conteúdo acima das camadas. */
-  padding: 110px 0; /* Cria espaço vertical generoso. */
-  max-width: 780px; /* Limita a largura do texto. */
-  margin-left: max(24px, calc((100vw - var(--container)) / 2)); /* Alinha o texto com o restante do site. */
-} /* Fecha o conteúdo do hero. */
-
-/* Cria o pequeno rótulo acima do título. */
-.eyebrow { /* Seleciona o texto pequeno do hero. */
-  margin: 0 0 18px; /* Cria espaço antes do título. */
-  color: var(--gold-light); /* Usa dourado claro. */
-  font-size: 13px; /* Mantém o rótulo discreto. */
-  font-weight: 800; /* Dá destaque ao rótulo. */
-  letter-spacing: .22em; /* Aumenta o refinamento visual. */
-  text-transform: uppercase; /* Mantém aparência de etiqueta premium. */
-} /* Fecha o eyebrow. */
-
-/* Cria o título principal elegante. */
-.hero h1 { /* Seleciona o título do hero. */
-  margin: 0; /* Remove margem padrão. */
-  max-width: 760px; /* Limita a largura do título. */
-  color: var(--white); /* Usa branco quente. */
-  font-family: "Playfair Display", Georgia, serif; /* Usa fonte clássica de restaurante. */
-  font-size: clamp(48px, 6vw, 82px); /* Adapta o tamanho à tela. */
-  font-weight: 700; /* Mantém o título forte. */
-  line-height: .98; /* Cria um título compacto e moderno. */
-  letter-spacing: -.035em; /* Aproxima as letras para um visual editorial. */
-} /* Fecha o título. */
-
-/* Destaca a última parte visualmente através da seleção de palavras quando necessário. */
-.hero-text { /* Seleciona o texto abaixo do título. */
-  max-width: 590px; /* Limita a largura para facilitar leitura. */
-  margin: 28px 0 0; /* Cria distância do título. */
-  color: rgba(255,250,242,.86); /* Usa branco levemente transparente. */
-  font-size: 18px; /* Define tamanho confortável. */
-  line-height: 1.7; /* Aumenta a leitura. */
-} /* Fecha o texto do hero. */
-
-/* Organiza os botões principais. */
-.hero-buttons { /* Seleciona o grupo de botões. */
-  display: flex; /* Coloca os botões lado a lado. */
-  flex-wrap: wrap; /* Permite quebra em telas menores. */
-  gap: 14px; /* Cria espaço entre os botões. */
-  margin-top: 34px; /* Cria distância do texto. */
-} /* Fecha os botões do hero. */
-
-/* Define o botão padrão. */
-.button { /* Seleciona todos os botões em formato de link. */
-  display: inline-flex; /* Permite centralizar conteúdo. */
-  align-items: center; /* Centraliza verticalmente. */
-  justify-content: center; /* Centraliza horizontalmente. */
-  min-height: 54px; /* Cria altura confortável. */
-  padding: 0 25px; /* Define espaço horizontal. */
-  border-radius: 999px; /* Cria formato premium arredondado. */
-  text-decoration: none; /* Remove sublinhado. */
-  font-weight: 800; /* Dá presença ao botão. */
-  font-size: 14px; /* Mantém o botão elegante. */
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease; /* Suaviza as animações. */
-} /* Fecha o botão. */
-
-/* Faz os botões levantarem levemente no hover. */
-.button:hover { /* Seleciona botões em hover. */
-  transform: translateY(-3px); /* Levanta o botão. */
-  box-shadow: 0 12px 28px rgba(0,0,0,.2); /* Adiciona profundidade. */
-} /* Fecha o hover. */
-
-/* Define o botão dourado principal. */
-.button-primary { /* Seleciona o botão principal. */
-  background: linear-gradient(135deg, var(--gold-light), var(--gold)); /* Cria degradê dourado. */
-  color: #21170f; /* Usa texto escuro para contraste. */
-} /* Fecha o botão principal. */
-
-/* Define o botão do WhatsApp. */
-.button-whatsapp { /* Seleciona o botão WhatsApp. */
-  background: var(--green); /* Usa verde oficial aproximado. */
-  color: #fff; /* Usa texto branco. */
-} /* Fecha o botão WhatsApp. */
-
-/* ============================================================
-   SEÇÕES GERAIS
-   ============================================================ */
-
-/* Define espaçamento padrão para as seções. */
-.section { /* Seleciona todas as seções comuns. */
-  padding: 100px 0; /* Cria bastante respiro vertical. */
-} /* Fecha as seções. */
-
-/* Define o fundo da seção Sobre. */
-.about { /* Seleciona a seção sobre. */
-  background: var(--cream); /* Usa fundo creme. */
-} /* Fecha o sobre. */
-
-/* Organiza a seção Sobre em duas colunas. */
-.about-grid { /* Seleciona o grid do sobre. */
-  display: grid; /* Ativa grid. */
-  grid-template-columns: 1.2fr .8fr; /* Dá mais espaço ao texto. */
-  gap: 70px; /* Cria distância entre as colunas. */
-  align-items: center; /* Centraliza verticalmente. */
-} /* Fecha o grid. */
-
-/* Define o pequeno rótulo das seções. */
-.section-label { /* Seleciona os rótulos. */
-  margin: 0 0 14px; /* Cria espaço abaixo. */
-  color: var(--gold); /* Usa dourado. */
-  font-size: 12px; /* Mantém o rótulo discreto. */
-  font-weight: 800; /* Destaca o rótulo. */
-  letter-spacing: .2em; /* Dá aspecto premium. */
-  text-transform: uppercase; /* Deixa o rótulo uniforme. */
-} /* Fecha o rótulo. */
-
-/* Estiliza os títulos das seções. */
-.section h2 { /* Seleciona os títulos dentro das seções. */
-  margin: 0 0 20px; /* Define espaçamento inferior. */
-  color: var(--dark); /* Usa marrom escuro. */
-  font-family: "Playfair Display", Georgia, serif; /* Usa tipografia elegante. */
-  font-size: clamp(34px, 4vw, 56px); /* Adapta o tamanho. */
-  line-height: 1.05; /* Mantém o título compacto. */
-} /* Fecha os títulos. */
-
-/* Estiliza os parágrafos das seções. */
-.about p, .section-heading > p:not(.section-label) { /* Seleciona textos de apresentação. */
-  color: var(--muted); /* Usa marrom acinzentado. */
-  font-size: 16px; /* Define tamanho confortável. */
-} /* Fecha os parágrafos. */
-
-/* Cria o cartão especial da seção Sobre. */
-.about-card { /* Seleciona o cartão sobre. */
-  padding: 42px; /* Cria bastante espaço interno. */
-  background: #fffaf3; /* Usa branco quente. */
-  border: 1px solid rgba(201,162,77,.24); /* Cria borda dourada discreta. */
-  border-radius: var(--radius); /* Arredonda os cantos. */
-  box-shadow: var(--shadow); /* Adiciona profundidade. */
-} /* Fecha o cartão. */
-
-/* Estiliza o símbolo do cartão Sobre. */
-.about-icon { /* Seleciona o ícone. */
-  width: 54px; /* Define largura. */
-  height: 54px; /* Define altura. */
-  display: grid; /* Permite centralização. */
-  place-items: center; /* Centraliza o símbolo. */
-  margin-bottom: 22px; /* Cria espaço abaixo. */
-  border: 1px solid var(--gold); /* Cria uma moldura dourada. */
-  border-radius: 50%; /* Cria círculo. */
-  color: var(--gold); /* Usa dourado. */
-  font-size: 24px; /* Aumenta o símbolo. */
-} /* Fecha o ícone. */
-
-/* Estiliza o título do cartão Sobre. */
-.about-card h3 { /* Seleciona o título do cartão. */
-  margin: 0 0 10px; /* Define espaço inferior. */
-  color: var(--dark); /* Usa marrom escuro. */
-  font-family: "Playfair Display", Georgia, serif; /* Usa fonte elegante. */
-  font-size: 28px; /* Define tamanho. */
-} /* Fecha o título. */
-
-/* ============================================================
-   CARDÁPIO
-   ============================================================ */
-
-/* Define fundo levemente diferente para o cardápio. */
-.menu-section { /* Seleciona o cardápio. */
-  background: #fffaf3; /* Usa branco quente. */
-} /* Fecha o cardápio. */
-
-/* Centraliza os títulos das seções. */
-.section-heading { /* Seleciona cabeçalhos de seção. */
-  max-width: 720px; /* Limita a largura. */
-  margin: 0 auto 48px; /* Centraliza e cria espaço inferior. */
-  text-align: center; /* Centraliza o conteúdo. */
-} /* Fecha o cabeçalho. */
-
-/* Cria a grade dos produtos. */
-.menu-grid { /* Seleciona a grade do cardápio. */
-  display: grid; /* Ativa grid. */
-  grid-template-columns: repeat(4, 1fr); /* Cria quatro colunas no computador. */
-  gap: 22px; /* Cria espaço entre produtos. */
-} /* Fecha a grade. */
-
-/* Cria cartões premium para os produtos. */
-.menu-card { /* Seleciona cada produto. */
-  overflow: hidden; /* Mantém imagens dentro do cartão. */
-  background: #fff; /* Usa fundo branco. */
-  border: 1px solid rgba(50,35,22,.08); /* Cria borda muito discreta. */
-  border-radius: var(--radius); /* Arredonda o cartão. */
-  box-shadow: 0 12px 35px rgba(40,25,15,.08); /* Cria sombra leve. */
-  transition: transform .25s ease, box-shadow .25s ease; /* Suaviza o hover. */
-} /* Fecha o cartão. */
-
-/* Levanta o produto no hover. */
-.menu-card:hover { /* Seleciona o cartão em hover. */
-  transform: translateY(-7px); /* Levanta o cartão. */
-  box-shadow: 0 20px 45px rgba(40,25,15,.14); /* Reforça a sombra. */
-} /* Fecha o hover. */
-
-/* Cria a área das fotos. */
-.photo-placeholder { /* Seleciona o espaço da foto. */
-  position: relative; /* Permite posicionar o texto. */
-  height: 235px; /* Define altura uniforme. */
-  overflow: hidden; /* Esconde excesso da imagem. */
-  background: linear-gradient(135deg, #e5d5bd, #b99059); /* Mostra fundo bonito mesmo sem foto. */
-} /* Fecha a área de foto. */
-
-/* Faz as fotos dos produtos preencherem o espaço. */
-.photo-placeholder img { /* Seleciona imagens dos produtos. */
-  width: 100%; /* Ocupa toda a largura. */
-  height: 100%; /* Ocupa toda a altura. */
-  object-fit: cover; /* Preenche sem deformar. */
-  transition: transform .5s ease; /* Anima o zoom. */
-} /* Fecha as imagens. */
-
-/* Aplica zoom suave na foto quando o cartão recebe hover. */
-.menu-card:hover .photo-placeholder img { /* Seleciona imagem do cartão em hover. */
-  transform: scale(1.05); /* Amplia levemente a foto. */
-} /* Fecha o hover da foto. */
-
-/* Esconde o texto da área da foto quando já existe uma imagem. */
-.photo-placeholder span { /* Seleciona o texto sobre a foto. */
-  position: absolute; /* Coloca o texto sobre a imagem. */
-  left: 16px; /* Posiciona à esquerda. */
-  bottom: 14px; /* Posiciona próximo ao rodapé da imagem. */
-  padding: 7px 12px; /* Cria espaço interno. */
-  border-radius: 999px; /* Cria formato de etiqueta. */
-  background: rgba(20,12,7,.72); /* Cria fundo escuro translúcido. */
-  color: var(--white); /* Usa texto claro. */
-  font-size: 11px; /* Define tamanho pequeno. */
-  font-weight: 800; /* Destaca a etiqueta. */
-  letter-spacing: .08em; /* Dá refinamento. */
-  text-transform: uppercase; /* Mantém aparência de etiqueta. */
-} /* Fecha a etiqueta. */
-
-/* Define o espaço interno dos produtos. */
-.menu-card-content { /* Seleciona conteúdo do produto. */
-  padding: 24px; /* Cria espaço interno. */
-} /* Fecha o conteúdo. */
-
-/* Estiliza a categoria do produto. */
-.tag { /* Seleciona a categoria. */
-  color: var(--gold); /* Usa dourado. */
-  font-size: 10px; /* Mantém a categoria pequena. */
-  font-weight: 800; /* Destaca a categoria. */
-  letter-spacing: .16em; /* Aumenta o refinamento. */
-  text-transform: uppercase; /* Padroniza a categoria. */
-} /* Fecha a categoria. */
-
-/* Estiliza o nome do produto. */
-.menu-card h3 { /* Seleciona os nomes dos produtos. */
-  margin: 8px 0 8px; /* Define espaçamento. */
-  color: var(--dark); /* Usa marrom escuro. */
-  font-family: "Playfair Display", Georgia, serif; /* Usa fonte elegante. */
-  font-size: 25px; /* Define tamanho. */
-} /* Fecha o nome. */
-
-/* Estiliza a descrição dos produtos. */
-.menu-card p { /* Seleciona descrições. */
-  min-height: 52px; /* Mantém os cartões alinhados. */
-  margin: 0; /* Remove margem padrão. */
-  color: var(--muted); /* Usa cor secundária. */
-  font-size: 13px; /* Define texto compacto. */
-} /* Fecha descrição. */
-
-/* Organiza preço e botão. */
-.menu-bottom { /* Seleciona o rodapé do produto. */
-  display: flex; /* Coloca preço e botão lado a lado. */
-  align-items: center; /* Alinha verticalmente. */
-  justify-content: space-between; /* Separa preço e botão. */
-  gap: 10px; /* Cria espaço mínimo. */
-  margin-top: 22px; /* Cria distância da descrição. */
-} /* Fecha o rodapé. */
-
-/* Estiliza o preço. */
-.menu-bottom strong { /* Seleciona o preço. */
-  color: var(--dark); /* Usa marrom escuro. */
-  font-size: 17px; /* Define tamanho do preço. */
-} /* Fecha o preço. */
-
-/* Estiliza o botão Pedir. */
-.order-button { /* Seleciona o botão de pedido. */
-  border: 0; /* Remove borda padrão. */
-  padding: 11px 16px; /* Cria área confortável. */
-  border-radius: 999px; /* Deixa o botão arredondado. */
-  background: var(--dark); /* Usa fundo escuro. */
-  color: var(--white); /* Usa texto claro. */
-  cursor: pointer; /* Mostra que é clicável. */
-  font-family: inherit; /* Usa a mesma fonte do site. */
-  font-size: 12px; /* Define tamanho. */
-  font-weight: 800; /* Destaca o botão. */
-  transition: .25s ease; /* Suaviza o hover. */
-} /* Fecha o botão. */
-
-/* Altera o botão Pedir no hover. */
-.order-button:hover { /* Seleciona botão em hover. */
-  background: var(--gold); /* Troca para dourado. */
-  color: var(--dark); /* Troca o texto para escuro. */
-  transform: translateY(-2px); /* Levanta levemente. */
-} /* Fecha o hover. */
-
-/* ============================================================
-   GALERIA
-   ============================================================ */
-
-/* Define fundo para a galeria. */
-.gallery-section { /* Seleciona a galeria. */
-  background: var(--cream); /* Usa fundo creme. */
-} /* Fecha a galeria. */
-
-/* Cria uma grade elegante para as fotos. */
-.gallery-grid { /* Seleciona a grade da galeria. */
-  display: grid; /* Ativa grid. */
-  grid-template-columns: repeat(4, 1fr); /* Cria quatro espaços. */
-  gap: 18px; /* Cria espaço entre fotos. */
-} /* Fecha a grade. */
-
-/* Cria espaços de foto visualmente bonitos. */
-.gallery-placeholder { /* Seleciona cada espaço de foto. */
-  min-height: 240px; /* Define altura. */
-  display: grid; /* Permite centralizar o texto. */
-  place-items: center; /* Centraliza o texto. */
-  border: 1px dashed rgba(120,88,48,.45); /* Cria uma borda pontilhada. */
-  border-radius: var(--radius); /* Arredonda o espaço. */
-  background: linear-gradient(135deg, #e9dcc9, #d4b88b); /* Cria um fundo provisório bonito. */
-  color: #5e4935; /* Define cor do texto. */
-  font-size: 12px; /* Define tamanho pequeno. */
-  font-weight: 800; /* Destaca o texto. */
-  letter-spacing: .14em; /* Dá aparência de etiqueta. */
-} /* Fecha o espaço de foto. */
-
-/* ============================================================
-   CHAMADA PARA PEDIDO
-   ============================================================ */
-
-/* Cria uma faixa premium para o WhatsApp. */
-.cta { /* Seleciona a chamada para ação. */
-  padding: 70px 0; /* Cria espaço vertical. */
-  background: linear-gradient(120deg, #20150e, #382317); /* Cria fundo marrom elegante. */
-  color: var(--white); /* Usa texto claro. */
-} /* Fecha a chamada. */
-
-/* Organiza texto e botão da chamada. */
-.cta-content { /* Seleciona o conteúdo da chamada. */
-  display: flex; /* Coloca texto e botão lado a lado. */
-  align-items: center; /* Centraliza verticalmente. */
-  justify-content: space-between; /* Separa os elementos. */
-  gap: 30px; /* Cria espaço entre os elementos. */
-} /* Fecha o conteúdo. */
-
-/* Define título branco na chamada. */
-.cta h2 { /* Seleciona o título da chamada. */
-  margin: 0 0 8px; /* Cria pequeno espaço. */
-  color: var(--white); /* Usa branco quente. */
-  font-family: "Playfair Display", Georgia, serif; /* Usa fonte clássica. */
-  font-size: 42px; /* Define tamanho forte. */
-} /* Fecha o título. */
-
-/* Define texto claro na chamada. */
-.cta p:not(.section-label) { /* Seleciona o texto da chamada. */
-  margin: 0; /* Remove margem padrão. */
-  color: rgba(255,250,242,.75); /* Usa branco suave. */
-} /* Fecha o texto. */
-
-/* Cria botão claro na chamada. */
-.button-light { /* Seleciona botão claro. */
-  background: var(--white); /* Usa fundo claro. */
-  color: var(--dark); /* Usa texto escuro. */
-} /* Fecha botão claro. */
-
-/* ============================================================
-   CONTATO
-   ============================================================ */
-
-/* Define fundo claro para os contatos. */
-.contact { /* Seleciona a seção de contato. */
-  background: #fffaf3; /* Usa branco quente. */
-} /* Fecha contato. */
-
-/* Organiza os cartões de contato. */
-.contact-grid { /* Seleciona a grade de contatos. */
-  display: grid; /* Ativa grid. */
-  grid-template-columns: repeat(4, 1fr); /* Cria quatro cartões. */
-  gap: 18px; /* Cria espaço entre cartões. */
-} /* Fecha a grade. */
-
-/* Cria cartões sofisticados de contato. */
-.contact-card { /* Seleciona cada cartão. */
-  padding: 28px; /* Cria espaço interno. */
-  background: var(--cream); /* Usa fundo creme. */
-  border: 1px solid rgba(201,162,77,.2); /* Cria borda dourada sutil. */
-  border-radius: var(--radius); /* Arredonda os cantos. */
-} /* Fecha o cartão. */
-
-/* Estiliza os rótulos dos contatos. */
-.contact-card span { /* Seleciona os rótulos. */
-  display: block; /* Faz o rótulo ocupar uma linha. */
-  margin-bottom: 10px; /* Cria espaço abaixo. */
-  color: var(--gold); /* Usa dourado. */
-  font-size: 10px; /* Mantém pequeno. */
-  font-weight: 800; /* Destaca o rótulo. */
-  letter-spacing: .16em; /* Dá refinamento. */
-} /* Fecha o rótulo. */
-
-/* Estiliza os dados principais dos contatos. */
-.contact-card strong { /* Seleciona os dados. */
-  display: block; /* Coloca o dado em linha própria. */
-  color: var(--dark); /* Usa marrom escuro. */
-  font-size: 17px; /* Define tamanho. */
-} /* Fecha o dado. */
-
-/* Estiliza os links dos cartões. */
-.contact-card a { /* Seleciona links de contato. */
-  display: inline-block; /* Permite margem superior. */
-  margin-top: 14px; /* Cria espaço. */
-  color: var(--dark); /* Usa marrom escuro. */
-  font-weight: 800; /* Destaca o link. */
-  text-decoration: none; /* Remove sublinhado. */
-} /* Fecha links. */
-
-/* Destaca links de contato no hover. */
-.contact-card a:hover { /* Seleciona links em hover. */
-  color: var(--gold); /* Muda para dourado. */
-} /* Fecha hover. */
-
-/* ============================================================
-   RODAPÉ
-   ============================================================ */
-
-/* Cria rodapé escuro. */
-.footer { /* Seleciona o rodapé. */
-  padding: 45px 0; /* Cria espaço vertical. */
-  background: #120d09; /* Usa fundo quase preto. */
-  color: rgba(255,250,242,.72); /* Usa texto claro suave. */
-} /* Fecha o rodapé. */
-
-/* Organiza o conteúdo do rodapé. */
-.footer-content { /* Seleciona o conteúdo. */
-  display: flex; /* Coloca elementos lado a lado. */
-  align-items: center; /* Centraliza verticalmente. */
-  justify-content: space-between; /* Distribui os elementos. */
-  gap: 25px; /* Cria espaço. */
-} /* Fecha o conteúdo. */
-
-/* Define tamanho da logo do rodapé. */
-.footer-logo { /* Seleciona logo do rodapé. */
-  width: 70px; /* Define largura. */
-  height: 70px; /* Define altura. */
-  object-fit: contain; /* Mantém proporção. */
-  border-radius: 50%; /* Mantém formato circular. */
-  border: 1px solid var(--gold); /* Cria borda dourada. */
-} /* Fecha logo. */
-
-/* Remove margem padrão do texto do rodapé. */
-.footer p { /* Seleciona texto do rodapé. */
-  margin: 0; /* Remove margem. */
-  font-size: 13px; /* Define tamanho discreto. */
-} /* Fecha texto. */
-
-/* Organiza os links do rodapé. */
-.footer-links { /* Seleciona os links. */
-  display: flex; /* Coloca links lado a lado. */
-  gap: 18px; /* Cria espaço. */
-} /* Fecha links. */
-
-/* Estiliza links do rodapé. */
-.footer-links a { /* Seleciona cada link. */
-  color: var(--white); /* Usa branco quente. */
-  text-decoration: none; /* Remove sublinhado. */
-  font-size: 13px; /* Define tamanho. */
-} /* Fecha links. */
-
-/* Muda a cor dos links do rodapé. */
-.footer-links a:hover { /* Seleciona hover. */
-  color: var(--gold-light); /* Usa dourado claro. */
-} /* Fecha hover. */
-
-/* ============================================================
-   WHATSAPP FLUTUANTE
-   ============================================================ */
-
-/* Cria o botão fixo do WhatsApp. */
-.floating-whatsapp { /* Seleciona o botão flutuante. */
-  position: fixed; /* Mantém o botão na tela. */
-  right: 24px; /* Define distância da direita. */
-  bottom: 24px; /* Define distância do rodapé. */
-  z-index: 1200; /* Mantém o botão acima dos demais elementos. */
-  width: 58px; /* Define largura. */
-  height: 58px; /* Define altura. */
-  display: grid; /* Permite centralizar o texto. */
-  place-items: center; /* Centraliza o texto. */
-  border-radius: 50%; /* Cria botão circular. */
-  background: var(--green); /* Usa verde WhatsApp. */
-  color: #fff; /* Usa texto branco. */
-  text-decoration: none; /* Remove sublinhado. */
-  font-size: 12px; /* Define tamanho. */
-  font-weight: 900; /* Destaca o botão. */
-  box-shadow: 0 12px 28px rgba(0,0,0,.25); /* Cria profundidade. */
-  transition: transform .25s ease; /* Suaviza movimento. */
-} /* Fecha o botão. */
-
-/* Levanta o botão no hover. */
-.floating-whatsapp:hover { /* Seleciona o botão em hover. */
-  transform: scale(1.08); /* Aumenta levemente o botão. */
-} /* Fecha hover. */
-
-/* ============================================================
-   RESPONSIVIDADE — TABLETS
-   ============================================================ */
-
-/* Ajusta o site para telas médias. */
-@media (max-width: 1050px) { /* Inicia a regra para tablets. */
-  .menu-grid { /* Seleciona a grade do cardápio. */
-    grid-template-columns: repeat(2, 1fr); /* Usa duas colunas. */
-  } /* Fecha a grade do cardápio. */
-
-  .gallery-grid { /* Seleciona a galeria. */
-    grid-template-columns: repeat(2, 1fr); /* Usa duas colunas. */
-  } /* Fecha a galeria. */
-
-  .contact-grid { /* Seleciona contatos. */
-    grid-template-columns: repeat(2, 1fr); /* Usa duas colunas. */
-  } /* Fecha contatos. */
-} /* Fecha tablet. */
-
-/* ============================================================
-   RESPONSIVIDADE — CELULARES
-   ============================================================ */
-
-/* Ajusta o layout para celulares. */
-@media (max-width: 760px) { /* Inicia a regra mobile. */
-  .container { /* Seleciona containers. */
-    width: min(100% - 32px, var(--container)); /* Reduz as margens laterais. */
-  } /* Fecha container. */
-
-  .header-content { /* Seleciona cabeçalho. */
-    min-height: 78px; /* Reduz a altura. */
-  } /* Fecha cabeçalho. */
-
-  .logo { /* Seleciona logo. */
-    width: 68px; /* Reduz largura. */
-    height: 68px; /* Reduz altura. */
-  } /* Fecha logo. */
-
-  .menu-button { /* Seleciona botão mobile. */
-    display: block; /* Mostra o botão. */
-  } /* Fecha botão. */
-
-  .nav { /* Seleciona menu. */
-    position: absolute; /* Posiciona o menu abaixo do cabeçalho. */
-    top: 78px; /* Coloca o menu abaixo do cabeçalho. */
-    left: 16px; /* Cria margem esquerda. */
-    right: 16px; /* Cria margem direita. */
-    display: none; /* Esconde até o JavaScript abrir. */
-    flex-direction: column; /* Organiza links verticalmente. */
-    align-items: stretch; /* Faz os links ocuparem a largura. */
-    padding: 14px; /* Cria espaço interno. */
-    background: #1b120c; /* Usa fundo escuro. */
-    border: 1px solid rgba(201,162,77,.28); /* Cria borda dourada. */
-    border-radius: 18px; /* Arredonda o menu. */
-    box-shadow: 0 18px 45px rgba(0,0,0,.25); /* Cria sombra. */
-  } /* Fecha o menu mobile. */
-
-  .nav.open { /* Seleciona o menu quando o JavaScript adicionar open. */
-    display: flex; /* Mostra o menu. */
-  } /* Fecha o estado aberto. */
-
-  .nav a { /* Seleciona links mobile. */
-    padding: 13px 14px; /* Aumenta a área de toque. */
-  } /* Fecha links mobile. */
-
-  .nav-whatsapp { /* Seleciona WhatsApp mobile. */
-    margin-left: 0; /* Remove margem lateral. */
-    margin-top: 5px; /* Cria pequeno espaço superior. */
-    text-align: center; /* Centraliza o texto. */
-  } /* Fecha WhatsApp mobile. */
-
-  .hero { /* Seleciona o hero mobile. */
-    min-height: 620px; /* Mantém uma área de destaque boa. */
-  } /* Fecha hero. */
-
-  .hero-content { /* Seleciona conteúdo do hero. */
-    margin-left: auto; /* Remove alinhamento específico do desktop. */
-    margin-right: auto; /* Centraliza o conteúdo. */
-    padding: 90px 0; /* Reduz o espaçamento vertical. */
-  } /* Fecha conteúdo. */
-
-  .hero h1 { /* Seleciona título mobile. */
-    font-size: clamp(42px, 12vw, 62px); /* Ajusta título para celular. */
-  } /* Fecha título. */
-
-  .hero-text { /* Seleciona texto mobile. */
-    font-size: 16px; /* Reduz o tamanho do texto. */
-  } /* Fecha texto. */
-
-  .hero-buttons { /* Seleciona botões mobile. */
-    align-items: stretch; /* Faz os botões ocuparem a largura disponível. */
-    flex-direction: column; /* Coloca os botões um abaixo do outro. */
-  } /* Fecha botões. */
-
-  .button { /* Seleciona botões mobile. */
-    width: 100%; /* Faz o botão ocupar a largura. */
-  } /* Fecha botão. */
-
-  .section { /* Seleciona seções mobile. */
-    padding: 72px 0; /* Reduz o espaço vertical. */
-  } /* Fecha seções. */
-
-  .about-grid { /* Seleciona o grid Sobre. */
-    grid-template-columns: 1fr; /* Coloca as colunas uma abaixo da outra. */
-    gap: 30px; /* Reduz o espaço. */
-  } /* Fecha o grid. */
-
-  .menu-grid { /* Seleciona cardápio mobile. */
-    grid-template-columns: 1fr; /* Usa uma coluna. */
-  } /* Fecha cardápio. */
-
-  .gallery-grid { /* Seleciona galeria mobile. */
-    grid-template-columns: 1fr; /* Usa uma coluna. */
-  } /* Fecha galeria. */
-
-  .gallery-placeholder { /* Seleciona espaços de foto mobile. */
-    min-height: 200px; /* Reduz a altura. */
-  } /* Fecha placeholder. */
-
-  .cta-content { /* Seleciona chamada mobile. */
-    align-items: flex-start; /* Alinha no início. */
-    flex-direction: column; /* Coloca conteúdo em coluna. */
-  } /* Fecha chamada. */
-
-  .contact-grid { /* Seleciona contatos mobile. */
-    grid-template-columns: 1fr; /* Usa uma coluna. */
-  } /* Fecha contatos. */
-
-  .footer-content { /* Seleciona rodapé mobile. */
-    align-items: flex-start; /* Alinha à esquerda. */
-    flex-direction: column; /* Coloca elementos em coluna. */
-  } /* Fecha rodapé. */
-
-  .footer-links { /* Seleciona links do rodapé. */
-    flex-wrap: wrap; /* Permite quebra de linha. */
-  } /* Fecha links. */
-
-  .floating-whatsapp { /* Seleciona WhatsApp flutuante. */
-    right: 16px; /* Reduz distância da direita. */
-    bottom: 16px; /* Reduz distância inferior. */
-  } /* Fecha WhatsApp. */
-} /* Fecha a responsividade mobile. */
+:root {
+  --dark: #17120e;
+  --dark-soft: #241912;
+  --cream: #f7f1e7;
+  --cream-2: #efe5d5;
+  --gold: #c9a24d;
+  --gold-light: #e2bf70;
+  --white: #fffaf2;
+  --text: #2b211a;
+  --muted: #75685d;
+  --green: #18a957;
+  --red: #e5282d;
+  --shadow: 0 18px 50px rgba(37, 24, 14, 0.14);
+  --radius: 20px;
+  --container: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+body.modal-open { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+
+button, a { font-family: inherit; }
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* ================= CABEÇALHO ================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(20, 14, 10, 0.95);
+  border-bottom: 1px solid rgba(201, 162, 77, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.header-content {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo-link { flex-shrink: 0; }
+
+.logo {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--dark);
+  padding: 2px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.32);
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav a {
+  position: relative;
+  padding: 12px 15px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .25s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 5px;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform .25s ease;
+}
+
+.nav a:hover::after { transform: scaleX(1); }
+
+.nav a:hover { color: var(--gold-light); }
+
+.nav-whatsapp {
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  margin-left: 8px;
+}
+
+.nav-whatsapp::after { display: none; }
+
+.menu-button {
+  display: none;
+  margin-left: auto;
+  border: 1px solid rgba(201,162,77,.5);
+  background: transparent;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.menu-button span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--gold-light);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(115deg, #160f0b 0%, #342117 48%, #5b351f 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  opacity: .32;
+  filter: saturate(.85);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(12,8,5,.95) 0%, rgba(12,8,5,.76) 48%, rgba(12,8,5,.25) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 110px 0;
+  max-width: 780px;
+  margin-left: max(24px, calc((100vw - var(--container)) / 2));
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 760px;
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+
+.hero-text {
+  max-width: 590px;
+  margin: 28px 0 0;
+  color: rgba(255,250,242,.86);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 25px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.2);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #21170f;
+}
+
+.button-whatsapp {
+  background: var(--green);
+  color: #fff;
+}
+
+.button-light {
+  background: var(--white);
+  color: var(--dark);
+}
+
+/* ================= SEÇÕES ================= */
+
+.section { padding: 100px 0; }
+
+.about { background: var(--cream); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.section-label {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin: 0 0 20px;
+  color: var(--dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.05;
+}
+
+.about p,
+.section-heading > p:not(.section-label) {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.about-card {
+  padding: 42px;
+  background: #fffaf3;
+  border: 1px solid rgba(201,162,77,.24);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 24px;
+}
+
+.about-card h3 {
+  margin: 0 0 10px;
+  color: var(--dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 28px;
+}
+
+.text-link {
+  color: var(--dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.text-link:hover { color: var(--gold); }
+
+/* ================= CARDÁPIO ================= */
+
+.menu-section,
+.videos-section {
+  background: #fffaf3;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.menu-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(50,35,22,.08);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 35px rgba(40,25,15,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 45px rgba(40,25,15,.14);
+}
+
+.photo-placeholder {
+  position: relative;
+  height: 235px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #e5d5bd, #b99059);
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.menu-card:hover .photo-placeholder img { transform: scale(1.05); }
+
+.photo-placeholder span {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(20,12,7,.72);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.menu-card-content { padding: 24px; }
+
+.tag {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.menu-card h3 {
+  margin: 8px 0;
+  color: var(--dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+}
+
+.menu-card p {
+  min-height: 52px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.menu-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.menu-bottom strong {
+  color: var(--dark);
+  font-size: 17px;
+}
+
+.order-button {
+  border: 0;
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: var(--dark);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .25s ease;
+}
+
+.order-button:hover {
+  background: var(--gold);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* ================= GALERIA 50 FOTOS ================= */
+
+.gallery-section { background: var(--cream); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid rgba(120,88,48,.28);
+  border-radius: 18px;
+  background-color: #d7c2a4;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  text-align: left;
+  isolation: isolate;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(15,9,5,.04), rgba(15,9,5,.78));
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(40,25,15,.18);
+}
+
+.gallery-number {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(20,12,7,.72);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.gallery-label {
+  position: absolute;
+  left: 14px;
+  bottom: 30px;
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.gallery-category {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  color: var(--gold-light);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+/* ================= VÍDEOS ================= */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.video-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(50,35,22,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.video-frame {
+  position: relative;
+  min-height: 360px;
+  background: #17120e;
+}
+
+.video-frame video {
+  width: 100%;
+  height: 360px;
+  display: block;
+  object-fit: cover;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2a1b12, #5b351f);
+  color: var(--gold-light);
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .12em;
+  pointer-events: none;
+}
+
+.video-placeholder small {
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.video-card h3 {
+  margin: 24px 24px 8px;
+  color: var(--dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 28px;
+}
+
+.video-card > p {
+  margin: 0 24px 26px;
+  color: var(--muted);
+}
+
+/* ================= INFORMAÇÕES ================= */
+
+.features-section { background: var(--cream-2); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  padding: 28px;
+  background: #fffaf3;
+  border: 1px solid rgba(201,162,77,.18);
+  border-radius: var(--radius);
+}
+
+.feature-card > span {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
+.feature-card h3 {
+  margin: 0 0 8px;
+  color: var(--dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  padding: 70px 0;
+  background: linear-gradient(120deg, #20150e, #382317);
+  color: var(--white);
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta h2 {
+  margin: 0 0 8px;
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+}
+
+.cta p:not(.section-label) {
+  margin: 0;
+  color: rgba(255,250,242,.75);
+}
+
+/* ================= CONTATO ================= */
+
+.contact { background: #fffaf3; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.contact-card {
+  padding: 28px;
+  background: var(--cream);
+  border: 1px solid rgba(201,162,77,.2);
+  border-radius: var(--radius);
+}
+
+.contact-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.contact-card strong {
+  display: block;
+  color: var(--dark);
+  font-size: 17px;
+}
+
+.contact-card p {
+  color: var(--muted);
+}
+
+.contact-card a {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contact-card a:hover { color: var(--gold); }
+
+/* ================= MODAL ================= */
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.gallery-modal.show { display: flex; }
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9,6,4,.86);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1;
+  width: min(950px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.35);
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(15,9,5,.78);
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.modal-photo {
+  min-height: 520px;
+  background-color: #d7c2a4;
+  background-position: center;
+  background-size: cover;
+}
+
+.modal-info {
+  padding: 48px 38px;
+}
+
+.modal-info h2 {
+  margin: 8px 0 16px;
+  color: var(--dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+.modal-info p {
+  color: var(--muted);
+}
+
+.modal-info h3 {
+  margin-top: 30px;
+  color: var(--dark);
+}
+
+/* ================= RODAPÉ ================= */
+
+.footer {
+  padding: 45px 0;
+  background: #120d09;
+  color: rgba(255,250,242,.72);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links a:hover { color: var(--gold-light); }
+
+/* ================= WHATSAPP FLUTUANTE ================= */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  transition: transform .25s ease;
+}
+
+.floating-whatsapp:hover { transform: scale(1.08); }
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 1050px) {
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width: 760px) {
+  .container { width: min(100% - 32px, var(--container)); }
+
+  .header-content { min-height: 78px; }
+
+  .logo {
+    width: 68px;
+    height: 68px;
+  }
+
+  .menu-button { display: block; }
+
+  .nav {
+    position: absolute;
+    top: 78px;
+    left: 16px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    background: #1b120c;
+    border: 1px solid rgba(201,162,77,.28);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0,0,0,.25);
+  }
+
+  .nav.open { display: flex; }
+
+  .nav a { padding: 13px 14px; }
+
+  .nav-whatsapp {
+    margin-left: 0;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .hero { min-height: 620px; }
+
+  .hero-content {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 90px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .hero-text { font-size: 16px; }
+
+  .hero-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button { width: 100%; }
+
+  .section { padding: 72px 0; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .menu-grid,
+  .gallery-grid,
+  .feature-grid,
+  .contact-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item { min-height: 240px; }
+
+  .video-frame,
+  .video-frame video {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .cta-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .modal-content {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+  }
+
+  .modal-photo { min-height: 280px; }
+
+  .modal-info { padding: 30px 24px; }
+
+  .modal-info h2 { font-size: 34px; }
+
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+  }
+}
