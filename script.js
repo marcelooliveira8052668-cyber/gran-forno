@@ -9,49 +9,49 @@ const products = [
         name: "Bolo de morango",
         description: "Bolo com creme e morangos, apresentado em uma foto real da Gran Forno.",
         ingredients: "Massa de bolo, creme, morangos e cobertura.",
-        image: "images/galeria-01.jpg"
+        image: "galeria-01.jpg"
     },
     {
         name: "Vitrine da Gran Forno",
         description: "Uma visão real da variedade de produtos disponíveis no estabelecimento.",
         ingredients: "Produtos variados da padaria e confeitaria.",
-        image: "images/galeria-02.jpg"
+        image: "galeria-02.jpg"
     },
     {
         name: "Doces da vitrine",
         description: "Doces e sobremesas registrados em vídeo na Gran Forno.",
         ingredients: "Ingredientes variam conforme o produto.",
-        image: "images/galeria-03.jpg"
+        image: "galeria-03.jpg"
     },
     {
         name: "Pães e salgados",
         description: "Produtos assados registrados na vitrine.",
         ingredients: "Ingredientes variam conforme o produto.",
-        image: "images/galeria-04.jpg"
+        image: "galeria-04.jpg"
     },
     {
         name: "Produtos da casa",
         description: "Mais uma imagem real dos produtos da Gran Forno.",
         ingredients: "Ingredientes variam conforme o produto.",
-        image: "images/galeria-05.jpg"
+        image: "galeria-05.jpg"
     },
     {
         name: "Variedade da vitrine",
         description: "Seleção de produtos registrada no estabelecimento.",
         ingredients: "Ingredientes variam conforme o produto.",
-        image: "images/galeria-06.jpg"
+        image: "galeria-06.jpg"
     },
     {
         name: "Vitrine de doces",
         description: "Outra seleção de doces e sobremesas.",
         ingredients: "Ingredientes variam conforme o produto.",
-        image: "images/galeria-07.jpg"
+        image: "galeria-07.jpg"
     },
     {
         name: "Salgados e assados",
         description: "Produtos assados e salgados registrados na vitrine.",
         ingredients: "Ingredientes variam conforme o produto.",
-        image: "images/galeria-08.jpg"
+        image: "galeria-08.jpg"
     }
 ];
 
