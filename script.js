@@ -9,7 +9,7 @@ const products = [
         name: "Bolo de morango",
         description: "Bolo com creme e morangos, apresentado em uma foto real da Gran Forno.",
         ingredients: "Massa de bolo, creme, morangos e cobertura.",
-        image: "/galeria-01.jpg"
+        image: "galeria-01.jpg"
     },
     {
         name: "Vitrine da Gran Forno",
