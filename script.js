@@ -1,131 +1,103 @@
-/* =========================================================
-   GRAN FORNO - JAVASCRIPT FINAL
-   ========================================================= */
+/* ============================================================
+   GRAN PADARIA — JavaScript
+   ------------------------------------------------------------
+   COLOQUE AQUI seus links REAIS (é só o que precisa editar).
 
-const whatsappNumber = "5511920676006";
+   WhatsApp: número com país + DDD (55 Brasil) e sem espaços.
+   11 92067-6006  =>  5511920676006
+   ============================================================ */
 
-const products = [
-    {
-        name: "Bolo de morango",
-        description: "Bolo com creme e morangos, apresentado em uma foto real da Gran Forno.",
-        ingredients: "Massa de bolo, creme, morangos e cobertura.",
-        image: "bolo.jpg"
-    },
-    {
-        name: "Vitrine da Gran Forno",
-        description: "Uma visão real da variedade de produtos disponíveis no estabelecimento.",
-        ingredients: "Produtos variados da padaria e confeitaria.",
-        image: "galeria-02.jpg"
-    },
-    {
-        name: "Doces da vitrine",
-        description: "Doces e sobremesas registrados em vídeo na Gran Forno.",
-        ingredients: "Ingredientes variam conforme o produto.",
-        image: "galeria-03.jpg"
-    },
-    {
-        name: "Pães e salgados",
-        description: "Produtos assados registrados na vitrine.",
-        ingredients: "Ingredientes variam conforme o produto.",
-        image: "galeria-04.jpg"
-    },
-    {
-        name: "Produtos da casa",
-        description: "Mais uma imagem real dos produtos da Gran Forno.",
-        ingredients: "Ingredientes variam conforme o produto.",
-        image: "galeria-05.jpg"
-    },
-    {
-        name: "Variedade da vitrine",
-        description: "Seleção de produtos registrada no estabelecimento.",
-        ingredients: "Ingredientes variam conforme o produto.",
-        image: "galeria-06.jpg"
-    },
-    {
-        name: "Vitrine de doces",
-        description: "Outra seleção de doces e sobremesas.",
-        ingredients: "Ingredientes variam conforme o produto.",
-        image: "galeria-07.jpg"
-    },
-    {
-        name: "Salgados e assados",
-        description: "Produtos assados e salgados registrados na vitrine.",
-        ingredients: "Ingredientes variam conforme o produto.",
-        image: "galeria-08.jpg"
-    }
-];
+const CONFIG = {
+    /* NÚMERO DO WHATSAPP (país + DDD + número, só dígitos) */
+    whatsapp: "5511920676006",
 
-const gallery = document.getElementById("gallery");
+    /* MENSAGEM inicial do WhatsApp */
+    whatsappMessage:
+        "Olá Gran Padaria! Gostaria de fazer um pedido.",
 
-products.forEach((product) => {
-    const card = document.createElement("article");
-    card.className = "gallery-card";
-    card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
-        <h3>${product.name}</h3>
-    `;
+    /* LINK DO IFOOD (cole a URL inteira do seu restaurante) */
+    ifood: "COLOQUE_AQUI_O_LINK_DO_IFOOD",
 
-    card.addEventListener("click", () => openProduct(product));
-    gallery.appendChild(card);
-});
+    /* LINK DO KEETA (cole a URL inteira do seu restaurante) */
+    keeta: "COLOQUE_AQUI_O_LINK_DO_KEETA",
 
-const modal = document.getElementById("productModal");
-const modalImage = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalIngredients = document.getElementById("modalIngredients");
-const modalWhatsapp = document.getElementById("modalWhatsapp");
-const modalClose = document.getElementById("modalClose");
+    /* LINK DO 99 (cole a URL inteira do seu restaurante) */
+    n99: "COLOQUE_AQUI_O_LINK_DO_99",
 
-function openProduct(product) {
-    modalImage.src = product.image;
-    modalImage.alt = product.name;
-    modalTitle.textContent = product.name;
-    modalDescription.textContent = product.description;
-    modalIngredients.textContent = product.ingredients;
+    /* TEXTO do pedido criado a partir do cardápio.
+       Você pode personalizar a mensagem inteira aqui. */
+    pedidoMensagem:
+        "Olá Gran Padaria! Gostaria de pedir: "
+};
 
-    const message = encodeURIComponent(
-        `Olá Gran Forno! Gostaria de pedir: ${product.name}.`
-    );
+/* ------------------------------------------------------------
+   NÃO PRECISA MEXER DAQUI PARA BAIXO
+   ------------------------------------------------------------ */
 
-    modalWhatsapp.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+/* Link do WhatsApp com a mensagem pronta */
+const linkWhats = [
+    "https://wa.me/", CONFIG.whatsapp,
+    "?text=", encodeURIComponent(CONFIG.whatsappMessage)
+].join("");
 
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-}
+/* Mapa dos canais de pedido -> link real */
+const ORDER_LINKS = {
+    whatsapp: linkWhats,
+    ifood: CONFIG.ifood,
+    keeta: CONFIG.keeta,
+    n99: CONFIG.n99
+};
 
-function closeProduct() {
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-}
-
-modalClose.addEventListener("click", closeProduct);
-
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        closeProduct();
+/* Aplica os links em todo elemento com [data-order] */
+document.querySelectorAll("[data-order]").forEach(function (a) {
+    const canal = a.getAttribute("data-order");
+    if (ORDER_LINKS[canal]) {
+        a.href = ORDER_LINKS[canal];
+        a.target = "_blank";
+        a.rel = "noopener";
     }
 });
 
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        closeProduct();
-    }
+/* ------------------------------------------------------------
+   CARDÁPIO: clicar num item abre o WhatsApp com o produto.
+   O nome vem do atributo data-produto do card no index.html.
+   ------------------------------------------------------------ */
+
+document.querySelectorAll(".menu-item").forEach(function (item) {
+    item.addEventListener("click", function () {
+        const produto = item.getAttribute("data-produto") || "um produto";
+        const mensagem = encodeURIComponent(
+            CONFIG.pedidoMensagem + produto + "."
+        );
+        window.open(
+            "https://wa.me/" + CONFIG.whatsapp + "?text=" + mensagem,
+            "_blank",
+            "noopener"
+        );
+    });
 });
+
+/* ------------------------------------------------------------
+   MENU MOBILE (abre e fecha no celular)
+   ------------------------------------------------------------ */
 
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
-menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", function () {
     const isOpen = mainNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-mainNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+mainNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
         mainNav.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
     });
 });
+
+/* ------------------------------------------------------------
+   ANO AUTOMÁTICO NO RODAPÉ
+   ------------------------------------------------------------ */
 
 document.getElementById("year").textContent = new Date().getFullYear();

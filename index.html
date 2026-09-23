@@ -1,615 +1,420 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description"
-        content="Gran Forno - pães, lanches, pizzas, doces e produtos preparados com carinho.">
+        content="Gran Padaria - padaria, lanchonete, almoço à la carte à tarde e pizza toda noite, com entregas pelo WhatsApp, iFood, Keeta e 99.">
+    <title>Gran Padaria | Pão quente, almoço à la carte e pizza toda noite</title>
 
-    <title>Gran Forno | Pães, Lanches, Pizzas e Doces</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,600&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
+
+    <!-- ============================================================
+         COMO TROCAR AS MÍDIAS (quando precisar atualizar):
+         FACHADA -> substitua images/hero.jpg
+         FOTOS   -> substitua images/galeria-01.jpg ... 17
+         VÍDEOS  -> substitua videos/video-01.mp4 ... 06
+         LOGO    -> salve images/logo.png e troque no <header>
+         LINKS   -> CONFIG no script.js (iFood, Keeta, 99)
+         ============================================================ -->
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
-    <header class="header">
+<!-- ========== AVISO DO TOPO (edite ou remova depois) ========== -->
+<div class="topbar">
+    <p>🥖 Pão quente o dia todo • 🍽️ Almoço à la carte à tarde • 🍕 <strong>Pizza toda noite</strong></p>
+</div>
 
-        <div class="header-inner">
+<!-- ==================== CABEÇALHO ==================== -->
+<header class="header">
+    <div class="header-inner">
 
-            <a class="brand" href="#inicio" aria-label="Gran Forno - início">
-                <img src="logo.jpeg" alt="Logo Gran Forno">
+        <!-- LOGO: salve em images/logo.png e troque o bloco abaixo por:
+             <img src="images/logo.png" alt="Gran Padaria" class="brand-logo"> -->
+        <a class="brand" href="#inicio" aria-label="Gran Padaria - início">
+            <span class="brand-mark">🥖</span>
+            <strong>GRAN PADARIA</strong>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="mainNav">
+            <a href="#inicio">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#entregas">Entregas</a>
+            <a href="#contato">Contato</a>
+            <a class="nav-order" href="#" data-order="whatsapp" target="_blank" rel="noopener">
+                🛒 Pedir agora
             </a>
+        </nav>
 
-            <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menu"
-                aria-expanded="false">
+    </div>
+</header>
 
-                <span></span>
-                <span></span>
-                <span></span>
+<main>
 
-            </button>
+<!-- ==================== CAPA (FACHADA) ==================== -->
+<!-- A foto da fachada fica inteira aqui em cima, sem texto
+     em cima dela. O título e os botões estão logo abaixo. -->
+<section class="hero" id="inicio">
 
-            <nav class="nav" id="mainNav">
+    <div class="hero-media">
+        <img src="images/hero.jpg" alt="Fachada da Gran Padaria">
+    </div>
 
-                <a href="#inicio">Início</a>
-                <a href="#sobre">Sobre nós</a>
-                <a href="#cardapio">Cardápio</a>
-                <a href="#galeria">Galeria</a>
-                <a href="#videos">Vídeos</a>
-                <a href="#contato">Contato</a>
-
-                <a class="nav-order"
-                    href="https://wa.me/5511920676006?text=Ol%C3%A1%20Gran%20Forno%2C%20gostaria%20de%20fazer%20um%20pedido"
-                    target="_blank"
-                    rel="noopener">
-
-                    Pedir no WhatsApp
-
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <main>
-
-
-        <!-- HERO -->
-        <section class="hero" id="inicio">
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                    GRAN FORNO
-                </p>
-
-                <h1>
-                    Sabor para todos os momentos.
-                </h1>
-
-                <p class="hero-text">
-                    Pães, lanches, pizzas, doces e muito mais,
-                    preparados com carinho para você.
-                </p>
-
-                <div class="hero-actions">
-
-                    <a class="btn btn-gold" href="#cardapio">
-                        Ver cardápio
-                    </a>
-
-                    <a class="btn btn-whatsapp"
-                        href="https://wa.me/5511920676006?text=Ol%C3%A1%20Gran%20Forno%2C%20gostaria%20de%20fazer%20um%20pedido"
-                        target="_blank"
-                        rel="noopener">
-
-                        WhatsApp
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SOBRE -->
-        <section class="section about" id="sobre">
-
-            <div class="container narrow">
-
-                <p class="eyebrow dark">
-                    SOBRE A GRAN FORNO
-                </p>
-
-                <h2>
-                    Um espaço para comer bem.
-                </h2>
-
-                <p>
-                    A Gran Forno reúne produtos de padaria,
-                    lanches, pizzas e doces em um ambiente acolhedor.
-                    Aqui você pode conhecer alguns dos produtos
-                    e também ver imagens reais do estabelecimento.
-                </p>
-
-            </div>
-
-        </section>
-
-
-       <!-- CARDÁPIO -->
-
-<section class="section menu-section" id="cardapio">
-
-    <div class="container">
-
-        <!-- TÍTULO DA SEÇÃO -->
-        <p class="eyebrow dark center">
-            CARDÁPIO
+    <div class="hero-content">
+        <p class="hero-badge">🔥 Pizza toda noite</p>
+        <h1>Pão quente, prato feito e <span>pizza</span> que sai do forno.</h1>
+        <p class="hero-text">
+            Padaria e lanchonete com almoço à la carte à tarde e
+            pizza toda noite. Tudo fresquinho, feito na hora,
+            e entregue na sua casa.
         </p>
 
-        <!-- SUBTÍTULO -->
-        <h2 class="center">
-            Escolha o que combina com seu momento.
-        </h2>
-
-        <!-- GRID DOS CARDS -->
-        <div class="category-grid">
-
-
-            <!-- PÃES -->
-            <article class="category-card">
-
-                <div class="category-image">
-
-                    <img
-                        src="https://tse1.explicit.bing.net/th/id/OIP.iwbh-VCh3FuMkkkrvLWpGAHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Pães frescos da Gran Forno"
-                    >
-
-                </div>
-
-                <div class="category-content">
-
-                    <h3>
-                        Pães
-                    </h3>
-
-                    <p>
-                        Pães frescos e opções para o dia a dia.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- LANCHES -->
-            <article class="category-card">
-
-                <div class="category-image">
-
-                    <img
-                        src="https://tse3.mm.bing.net/th/id/OIP.cj-8ewkwwwYaXIgH5eQsKQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Lanches preparados pela Gran Forno"
-                    >
-
-                </div>
-
-                <div class="category-content">
-
-                    <h3>
-                        Lanches
-                    </h3>
-
-                    <p>
-                        Opções para um lanche rápido e saboroso.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- PIZZAS -->
-            <article class="category-card">
-
-                <div class="category-image">
-
-                    <img
-                        src="https://institucional.atlaseletro.com.br/wp-content/uploads/2023/08/Pizza-moda-casa-1024x576.jpg"
-                        alt="Pizza preparada pela Gran Forno"
-                    >
-
-                </div>
-
-                <div class="category-content">
-
-                    <h3>
-                        Pizzas
-                    </h3>
-
-                    <p>
-                        Sabores para compartilhar ou aproveitar sozinho.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- DOCES -->
-            <article class="category-card">
-
-                <div class="category-image">
-
-                    <img
-                        src="galeria-01.jpg"
-                        alt="Bolos e doces da Gran Forno"
-                    >
-
-                </div>
-
-                <div class="category-content">
-
-                    <h3>
-                        Doces
-                    </h3>
-
-                    <p>
-                        Bolos e sobremesas para adoçar o momento.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRATO DO DIA -->
-            <article class="category-card">
-
-                <div class="category-image">
-
-                    <img
-                        src="https://tse4.mm.bing.net/th/id/OIP.kN-O7AWcE_8XZZaeFfag5AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Prato do dia da Gran Forno"
-                    >
-
-                </div>
-
-                <div class="category-content">
-
-                    <h3>
-                        Prato do Dia
-                    </h3>
-
-                    <p>
-                        Uma opção especial preparada para o almoço, com sabor e qualidade.
-                    </p>
-
-                </div>
-
-            </article>
-
-
+        <div class="hero-actions">
+            <a class="btn btn-gold" href="#cardapio">Ver cardápio</a>
+            <a class="btn btn-whatsapp" href="#" data-order="whatsapp" target="_blank" rel="noopener">
+                💬 Pedir pelo WhatsApp
+            </a>
         </div>
 
+        <div class="hero-apps">
+            <span>Peça também:</span>
+            <a href="#" data-order="ifood" target="_blank" rel="noopener">🛵 iFood</a>
+            <a href="#" data-order="keeta" target="_blank" rel="noopener">🛍️ Keeta</a>
+            <a href="#" data-order="n99" target="_blank" rel="noopener">🚗 99</a>
+        </div>
     </div>
-
 </section>
 
-        <!-- GALERIA -->
-        <section class="section gallery-section" id="galeria">
-
-            <div class="container">
-
-                <p class="eyebrow">
-                    FOTOS REAIS
-                </p>
-
-                <h2>
-                    Conheça a Gran Forno.
-                </h2>
-
-                <p class="section-lead">
-                    Clique em uma foto para ver mais informações.
-                </p>
-
-                <div class="gallery" id="gallery"></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- VÍDEOS -->
-        <section class="section video-section" id="videos">
-
-            <div class="container">
-
-                <p class="eyebrow dark center">
-                    VÍDEOS
-                </p>
-
-                <h2 class="center">
-                    Veja nossos produtos.
-                </h2>
-
-
-                <div class="video-grid">
-
-
-                    <article class="video-card">
-
-                        <video controls preload="metadata" playsinline>
-
-                            <source
-                                src="video-01.mp4"
-                                type="video/mp4"
-                            >
-
-                        </video>
-
-                        <h3>
-                            Doces e sobremesas
-                        </h3>
-
-                    </article>
-
-
-                    <article class="video-card">
-
-                        <video controls preload="metadata" playsinline>
-
-                            <source
-                                src="video-02.mp4"
-                                type="video/mp4"
-                            >
-
-                        </video>
-
-                        <h3>
-                            Pães e salgados
-                        </h3>
-
-                    </article>
-
-
-                    <article class="video-card">
-
-                        <video controls preload="metadata" playsinline>
-
-                            <source
-                                src="video-03.mp4"
-                                type="video/mp4"
-                            >
-
-                        </video>
-
-                        <h3>
-                            Produtos da vitrine
-                        </h3>
-
-                    </article>
-
-
-                    <article class="video-card">
-
-                        <video controls preload="metadata" playsinline>
-
-                            <source
-                                src="video-04.mp4"
-                                type="video/mp4"
-                            >
-
-                        </video>
-
-                        <h3>
-                            Variedade da casa
-                        </h3>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTATO -->
-        <section class="section contact-section" id="contato">
-
-            <div class="container">
-
-                <p class="eyebrow dark center">
-                    CONTATO
-                </p>
-
-                <h2 class="center">
-                    Faça seu pedido.
-                </h2>
-
-
-                <div class="contact-grid">
-
-
-                    <!-- WHATSAPP -->
-                    <article class="contact-card">
-
-                        <span>📱</span>
-
-                        <h3>
-                            WhatsApp
-                        </h3>
-
-                        <p>
-                            Fale diretamente com a Gran Forno.
-                        </p>
-
-                        <a
-                            href="https://wa.me/5511920676006?text=Ol%C3%A1%20Gran%20Forno%2C%20gostaria%20de%20fazer%20um%20pedido"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            11 92067-6006
-                        </a>
-
-                    </article>
-
-
-                    <!-- ENDEREÇO -->
-                    <article class="contact-card">
-
-                        <span>📍</span>
-
-                        <h3>
-                            Endereço
-                        </h3>
-
-                        <p>
-                            Coloque aqui o endereço completo da Gran Forno.
-                        </p>
-
-                    </article>
-
-
-                    <!-- HORÁRIO -->
-                    <article class="contact-card">
-
-                        <span>🕒</span>
-
-                        <h3>
-                            Horário
-                        </h3>
-
-                        <p>
-                            Coloque aqui os dias e horários de funcionamento.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-
-                <!-- IFOOD -->
-                <div class="ifood-box">
-
-                    <p>
-                        Também podemos colocar aqui o pedido pelo iFood.
-                    </p>
-
-                    <a
-                        class="btn btn-ifood"
-                        href="COLOQUE_AQUI_O_LINK_DO_IFOOD"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Pedir pelo iFood
-                    </a>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- RODAPÉ -->
-    <footer class="footer">
-
-        <div class="container footer-inner">
-
-            <strong>
-                GRAN FORNO
-            </strong>
-
-            <p>
-                © <span id="year"></span>
-                Gran Forno. Todos os direitos reservados.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- WHATSAPP FLUTUANTE -->
-    <a
-        class="floating-whatsapp"
-        href="https://wa.me/5511920676006?text=Ol%C3%A1%20Gran%20Forno%2C%20gostaria%20de%20fazer%20um%20pedido"
-        target="_blank"
-        rel="noopener"
-        aria-label="Falar com a Gran Forno pelo WhatsApp"
-    >
-        WhatsApp
-    </a>
-
-
-    <!-- MODAL -->
-    <div
-        class="modal"
-        id="productModal"
-        aria-hidden="true"
-    >
-
-        <div
-            class="modal-box"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="modalTitle"
-        >
-
-            <button
-                class="modal-close"
-                id="modalClose"
-                aria-label="Fechar"
-            >
-                ×
-            </button>
-
-
-            <img
-                id="modalImage"
-                src=""
-                alt=""
-            >
-
-
-            <div class="modal-body">
-
-                <p class="eyebrow dark">
-                    PRODUTO
-                </p>
-
-                <h2 id="modalTitle"></h2>
-
-                <p id="modalDescription"></p>
-
-                <p>
-                    <strong>Ingredientes:</strong>
-                    <span id="modalIngredients"></span>
-                </p>
-
-                <a
-                    class="btn btn-whatsapp"
-                    id="modalWhatsapp"
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Pedir pelo WhatsApp
-                </a>
-
-            </div>
+<!-- ==================== DESTAQUES ==================== -->
+<section class="section highlights">
+    <div class="container">
+
+        <div class="highlight-grid">
+
+            <article class="highlight-card">
+                <span class="highlight-icon">🥖</span>
+                <h3>Padaria</h3>
+                <p>Pães e salgados quentinhos para o dia a dia.</p>
+            </article>
+
+            <article class="highlight-card">
+                <span class="highlight-icon">🥪</span>
+                <h3>Lanchonete</h3>
+                <p>Lanches rápidos e gostosos para qualquer hora.</p>
+            </article>
+
+            <article class="highlight-card">
+                <span class="highlight-icon">🍽️</span>
+                <h3>Almoço à la carte</h3>
+                <p>Pratos preparados na hora, servidos à tarde.</p>
+            </article>
+
+            <article class="highlight-card highlight-hot">
+                <span class="highlight-icon">🍕</span>
+                <h3>Pizza toda noite</h3>
+                <p>Todas as noites, pizza quente saindo do forno.</p>
+            </article>
 
         </div>
 
     </div>
+</section>
 
+<!-- ==================== CARDÁPIO ==================== -->
+<section class="section menu-section" id="cardapio">
+    <div class="container">
+        <p class="eyebrow dark center">CARDÁPIO</p>
+        <h2 class="center">Escolha o que combina com seu momento.</h2>
+        <p class="section-lead center-text">Toque em um item e peça direto no WhatsApp.</p>
 
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+        <!-- EDITE AQUI os itens. Cada card vira um pedido no WhatsApp.
+             Adicione ou remova a vontade. -->
+        <div class="menu-grid">
 
+            <article class="menu-item" data-produto="Pão francês">
+                <div class="menu-emoji">🥖</div>
+                <div class="menu-info">
+                    <h3>Pães frescos</h3>
+                    <p>Pão francês e pães especiais saindo do forno.</p>
+                </div>
+                <span class="menu-action">Pedir →</span>
+            </article>
+
+            <article class="menu-item" data-produto="Lanche de lanchonete">
+                <div class="menu-emoji">🥪</div>
+                <div class="menu-info">
+                    <h3>Lanches</h3>
+                    <p>Sanduíches e lanches feitos na hora.</p>
+                </div>
+                <span class="menu-action">Pedir →</span>
+            </article>
+
+            <article class="menu-item" data-produto="Almoço à la carte">
+                <div class="menu-emoji">🍽️</div>
+                <div class="menu-info">
+                    <h3>Almoço à la carte</h3>
+                    <p>Prato do dia e opções servidas à tarde.</p>
+                </div>
+                <span class="menu-action">Pedir →</span>
+            </article>
+
+            <article class="menu-item" data-produto="Pizza">
+                <div class="menu-emoji">🍕</div>
+                <div class="menu-info">
+                    <h3>Pizza toda noite</h3>
+                    <p>Sabores variados, quentinhas, todas as noites.</p>
+                </div>
+                <span class="menu-action">Pedir →</span>
+            </article>
+
+            <article class="menu-item" data-produto="Doces e salgados">
+                <div class="menu-emoji">🍩</div>
+                <div class="menu-info">
+                    <h3>Doces &amp; salgados</h3>
+                    <p>Bolos, doces e salgadinhos para todas as horas.</p>
+                </div>
+                <span class="menu-action">Pedir →</span>
+            </article>
+
+            <article class="menu-item" data-produto="Bebidas">
+                <div class="menu-emoji">🥤</div>
+                <div class="menu-info">
+                    <h3>Bebidas</h3>
+                    <p>Refrigerantes, sucos e cafés.</p>
+                </div>
+                <span class="menu-action">Pedir →</span>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== COMO PEDIR ==================== -->
+<section class="section howto">
+    <div class="container">
+        <p class="eyebrow dark center">COMO PEDIR</p>
+        <h2 class="center">Receber em casa nunca foi tão fácil.</h2>
+
+        <div class="howto-grid">
+
+            <div class="howto-step">
+                <span class="step-num">1</span>
+                <h3>Escolha o que quer</h3>
+                <p>Veja o cardápio e escolha seu lanche, prato ou pizza.</p>
+            </div>
+
+            <div class="howto-step">
+                <span class="step-num">2</span>
+                <h3>Peça no seu app</h3>
+                <p>WhatsApp, iFood, Keeta ou 99 — o que for melhor pra você.</p>
+            </div>
+
+            <div class="howto-step">
+                <span class="step-num">3</span>
+                <h3>Receba quentinho</h3>
+                <p>Entregamos na sua casa ou você retira na Gran Padaria.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== GALERIA (FOTOS REAIS) ==================== -->
+<section class="section gallery-section" id="galeria">
+    <div class="container">
+        <p class="eyebrow">FOTOS REAIS</p>
+        <h2>Conheça a Gran Padaria.</h2>
+        <p class="section-lead">As fotos já estão ativas. Para trocar alguma, substitua o arquivo <code>images/galeria-XX.jpg</code> mantendo o nome.</p>
+
+        <div class="gallery">
+
+            <div class="gallery-slot gal-01"></div>
+            <div></div>
+            <div class="gallery-slot gal-03"></div>
+            <div></div>
+            <div class="gallery-slot gal-05"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="gallery-slot gal-14"></div>
+            <div class="gallery-slot gal-15"></div>
+            <div class="gallery-slot gal-16"></div>
+            <div></div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== VÍDEOS ==================== -->
+<section class="section video-section" id="videos">
+    <div class="container">
+        <p class="eyebrow dark center">VÍDEOS</p>
+        <h2 class="center">Veja nossos produtos.</h2>
+        <p class="section-lead center-text">Os vídeos já estão ativos. Para trocar algum, substitua o arquivo <code>videos/video-XX.mp4</code> mantendo o nome.</p>
+
+        <div class="video-grid">
+
+            <div class="video-slot">
+                <video controls preload="metadata" playsinline>
+                    <source src="videos/video-01.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-slot">
+                <video controls preload="metadata" playsinline>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-slot">
+                <video controls preload="metadata" playsinline>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-slot">
+                <video controls preload="metadata" playsinline>
+                    <source src="videos/video-04.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-slot">
+                <video controls preload="metadata" playsinline>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-slot">
+                <video controls preload="metadata" playsinline>
+                    <source src="videos/video-06.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ENTREGAS (APPS) ==================== -->
+<section class="section delivery-section" id="entregas">
+    <div class="container">
+        <p class="eyebrow center">PEÇA ONLINE</p>
+        <h2 class="center">Receba em casa ou retire na loja.</h2>
+        <p class="section-lead center-text">Escolha o app, faça seu pedido e pronto.</p>
+
+        <div class="delivery-grid">
+
+            <a class="delivery-card delivery-whats" href="#" data-order="whatsapp" target="_blank" rel="noopener">
+                <span class="delivery-icon">💬</span>
+                <strong>WhatsApp</strong>
+                <small>Fale direto com a gente</small>
+            </a>
+
+            <a class="delivery-card delivery-ifood" href="#" data-order="ifood" target="_blank" rel="noopener">
+                <span class="delivery-icon">🛵</span>
+                <strong>iFood</strong>
+                <small>Peça pelo app</small>
+            </a>
+
+            <a class="delivery-card delivery-keeta" href="#" data-order="keeta" target="_blank" rel="noopener">
+                <span class="delivery-icon">🛍️</span>
+                <strong>Keeta</strong>
+                <small>Peça pelo app</small>
+            </a>
+
+            <a class="delivery-card delivery-99" href="#" data-order="n99" target="_blank" rel="noopener">
+                <span class="delivery-icon">🚗</span>
+                <strong>99</strong>
+                <small>Peça pelo app</small>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTATO ==================== -->
+<section class="section contact-section" id="contato">
+    <div class="container">
+        <p class="eyebrow dark center">CONTATO</p>
+        <h2 class="center">Encontre a Gran Padaria.</h2>
+
+        <!-- ENDEREÇO E HORÁRIO: edite os textos abaixo -->
+        <div class="contact-grid">
+
+            <article class="contact-card">
+                <span>📱</span>
+                <h3>WhatsApp</h3>
+                <p>Atendimento rápido para pedidos e reservas.</p>
+                <a href="#" data-order="whatsapp" target="_blank" rel="noopener">11 92067-6006</a>
+            </article>
+
+            <article class="contact-card">
+                <span>📍</span>
+                <h3>Endereço</h3>
+                <p>Coloque aqui o endereço completo da Gran Padaria.</p>
+            </article>
+
+            <article class="contact-card">
+                <span>🕒</span>
+                <h3>Horário</h3>
+                <p>Coloque aqui os dias e horários de funcionamento.</p>
+            </article>
+
+        </div>
+
+        <div class="cta-box">
+            <h3>Bateu fome?</h3>
+            <p>Peça agora e receba quentinho na sua casa.</p>
+            <div class="box-buttons">
+                <a class="btn btn-whatsapp" href="#" data-order="whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+                <a class="btn btn-ifood" href="#" data-order="ifood" target="_blank" rel="noopener">🛵 iFood</a>
+                <a class="btn btn-keeta" href="#" data-order="keeta" target="_blank" rel="noopener">🛍️ Keeta</a>
+                <a class="btn btn-99" href="#" data-order="n99" target="_blank" rel="noopener">🚗 99</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ==================== RODAPÉ ==================== -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <span class="brand-mark footer-mark">🥖</span>
+        <strong>GRAN PADARIA</strong>
+        <p>Padaria • Lanchonete • Almoço à la carte • Pizza • Entregas</p>
+        <p>© <span id="year"></span> Gran Padaria. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a class="floating-whatsapp"
+   href="#"
+   data-order="whatsapp"
+   target="_blank" rel="noopener"
+   aria-label="Falar com a Gran Padaria pelo WhatsApp">
+    💬
+</a>
+
+<!-- Barra fixa no celular (pedir rápido) -->
+<a class="mobile-order" href="#" data-order="whatsapp" target="_blank" rel="noopener">
+    🛒 Pedir agora
+</a>
+
+<script src="script.js"></script>
 </body>
-
 </html>
