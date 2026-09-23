@@ -1,12 +1,12 @@
 /* ============================================================
    GRAN PADARIA — folha de estilos
    ============================================================
-   📷 FOTOS (pasta images/)
+   📷 FOTOS (na mesma pasta do site)
    logo.png?           = logo do cabeçalho (troque no <header>)
    hero.jpg            = FOTO DA FACHADA (já ativa na regra .hero)
    galeria-01..17.jpg  = fotos da galeria (já ativas nas regras .gal-XX)
 
-   🎬 VÍDEOS (pasta videos/)
+   🎬 VÍDEOS (na mesma pasta do site)
    video-01..06.mp4    = vídeos (já ativos no index.html)
 
    🔗 LINKS DOS APPS  = CONFIG no script.js
@@ -40,7 +40,7 @@
 }
 
 /* ============================================================
-   2. RESTAURAÇÃO E BASE
+   2. RESTAURA�?�fO E BASE
    ============================================================ */
 
 * {
@@ -92,7 +92,7 @@ code {
 }
 
 /* ============================================================
-   3. CONTEINERES PADRÃO
+   3. CONTEINERES PADR�fO
    ============================================================ */
 
 .container {
@@ -126,7 +126,7 @@ code {
 }
 
 /* ============================================================
-   4. TÍTULOS DE SEÇÃO (eyebrow)
+   4. TÍTULOS DE SE�?�fO (eyebrow)
    ============================================================ */
 
 .eyebrow {
@@ -189,7 +189,7 @@ code {
 }
 
 /* ============================================================
-   6. CABEÇALHO
+   6. CABE�?ALHO
    ============================================================ */
 
 .header {
@@ -318,7 +318,7 @@ code {
     text-align: center;
 }
 
-/* 📷 FOTO DA FACHADA (images/hero.jpg): bloco inteiro, sem texto
+/* �Y"� FOTO DA FACHADA (hero.jpg): bloco inteiro, sem texto
    em cima dela. Troque o arquivo para trocar a fachada. */
 .hero-media {
     width: 100%;
@@ -412,7 +412,7 @@ code {
 }
 
 /* ============================================================
-   8. BOTÕES
+   8. BOT�.ES
    ============================================================ */
 
 .btn {
@@ -683,24 +683,24 @@ code {
     outline-color: var(--dourado);
 }
 
-/* FOTOS — cada linha liga um quadrado da galeria à sua foto */
-.gal-01 { background-image: url("images/galeria-01.jpg"); }
-.gal-02 { background-image: url("images/galeria-02.jpg"); }
-.gal-03 { background-image: url("images/galeria-03.jpg"); }
-.gal-04 { background-image: url("images/galeria-04.jpg"); }
-.gal-05 { background-image: url("images/galeria-05.jpg"); }
-.gal-06 { background-image: url("images/galeria-06.jpg"); }
-.gal-07 { background-image: url("images/galeria-07.jpg"); }
-.gal-08 { background-image: url("images/galeria-08.jpg"); }
-.gal-09 { background-image: url("images/galeria-09.jpg"); }
-.gal-10 { background-image: url("images/galeria-10.jpg"); }
-.gal-11 { background-image: url("images/galeria-11.jpg"); }
-.gal-12 { background-image: url("images/galeria-12.jpg"); }
-.gal-13 { background-image: url("images/galeria-13.jpg"); }
-.gal-14 { background-image: url("images/galeria-14.jpg"); }
-.gal-15 { background-image: url("images/galeria-15.jpg"); }
-.gal-16 { background-image: url("images/galeria-16.jpg"); }
-.gal-17 { background-image: url("images/galeria-17.jpg"); }
+/* FOTOS �?" cada linha liga um quadrado da galeria à sua foto */
+.gal-01 { background-image: url("galeria-01.jpg"); }
+.gal-02 { background-image: url("galeria-02.jpg"); }
+.gal-03 { background-image: url("galeria-03.jpg"); }
+.gal-04 { background-image: url("galeria-04.jpg"); }
+.gal-05 { background-image: url("galeria-05.jpg"); }
+.gal-06 { background-image: url("galeria-06.jpg"); }
+.gal-07 { background-image: url("galeria-07.jpg"); }
+.gal-08 { background-image: url("galeria-08.jpg"); }
+.gal-09 { background-image: url("galeria-09.jpg"); }
+.gal-10 { background-image: url("galeria-10.jpg"); }
+.gal-11 { background-image: url("galeria-11.jpg"); }
+.gal-12 { background-image: url("galeria-12.jpg"); }
+.gal-13 { background-image: url("galeria-13.jpg"); }
+.gal-14 { background-image: url("galeria-14.jpg"); }
+.gal-15 { background-image: url("galeria-15.jpg"); }
+.gal-16 { background-image: url("galeria-16.jpg"); }
+.gal-17 { background-image: url("galeria-17.jpg"); }
 
 /* ============================================================
    13. VÍDEOS
@@ -872,7 +872,7 @@ code {
 }
 
 .cta-box::before {
-    content: "🍕";
+    content: "�Y�.";
     position: absolute;
     right: -16px;
     bottom: -22px;
@@ -902,7 +902,7 @@ code {
 }
 
 /* ============================================================
-   16. RODAPÉ
+   16. RODAP�?
    ============================================================ */
 
 .footer {
