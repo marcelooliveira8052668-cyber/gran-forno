@@ -658,7 +658,6 @@ code {
 
 .gallery-slot {
     height: 220px;
-    border: 3px solid rgba(196,127,31,0.25);
     border-radius: var(--raio);
     background-color: #f3e6d3;
     background-size: cover;
@@ -667,11 +666,21 @@ code {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    overflow: hidden;
+    border: 3px solid #fff;
+    outline: 1px solid rgba(196,127,31,0.35);
+}
+
+.gallery-section {
+    background: var(--creme);
 }
 
 .gallery-slot:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.22);
+    outline-color: var(--dourado);
 }
 
 /* FOTOS — cada linha liga um quadrado da galeria à sua foto */
@@ -717,6 +726,15 @@ code {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    border: 1px solid rgba(232,163,59,0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.video-slot:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+    border-color: var(--dourado);
 }
 
 .video-slot video {
@@ -725,6 +743,7 @@ code {
     object-fit: cover;
     display: block;
     background: #000;
+    border-radius: 0 0 var(--raio) var(--raio);
 }
 
 /* ============================================================
